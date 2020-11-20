@@ -7,22 +7,25 @@ namespace Exercise10
     {
         static void Main(string[] args)
         {
+            // initialize variables
             StreamReader file;
             string sentence;
             string[] wordList;
             int total = 0;
 
+            // attempt to open and process file
             try
             {
-                file = File.OpenText("TextFile1.txt");
-                sentence = file.ReadLine();
-                wordList = sentence.Split(' ');
+                file = File.OpenText("TextFile1.txt"); // opens file
+                sentence = file.ReadLine();     // reads line
+                wordList = sentence.Split(' '); // delimits on spaces, distributes words into an array
 
+                // loops through arrray and checks last char of each word
                 foreach (string s in wordList)
                 {
                    if (s.EndsWith('t') || s.EndsWith('e'))
                     {
-                        total++;
+                        total++;    // increment total of words that end with t or e
                     }
                 }
 
